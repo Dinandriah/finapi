@@ -83,7 +83,7 @@ export class PlaceController {
     return await this.placesRepository.updateAll(places, where);
   }
 
-  @get('/places/{id}', {
+  @get('/places/{_id}', {
     responses: {
       '200': {
         description: 'Places model instance',
@@ -91,11 +91,11 @@ export class PlaceController {
       },
     },
   })
-  async findById(@param.path.number('id') id: number): Promise<Places> {
-    return await this.placesRepository.findById(id);
+  async findById(@param.path.string('_id') _id: string): Promise<Places> {
+    return await this.placesRepository.findById(_id);
   }
 
-  @patch('/places/{id}', {
+  @patch('/places/{_id}', {
     responses: {
       '204': {
         description: 'Places PATCH success',
@@ -103,20 +103,20 @@ export class PlaceController {
     },
   })
   async updateById(
-    @param.path.number('id') id: number,
+    @param.path.string('_id') _id: string,
     @requestBody() places: Places,
   ): Promise<void> {
-    await this.placesRepository.updateById(id, places);
+    await this.placesRepository.updateById(_id, places);
   }
 
-  @del('/places/{id}', {
+  @del('/places/{_id}', {
     responses: {
       '204': {
         description: 'Places DELETE success',
       },
     },
   })
-  async deleteById(@param.path.number('id') id: number): Promise<void> {
-    await this.placesRepository.deleteById(id);
+  async deleteById(@param.path.string('_id') _id: string): Promise<void> {
+    await this.placesRepository.deleteById(_id);
   }
 }

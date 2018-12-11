@@ -5,7 +5,7 @@ import {inject} from '@loopback/core';
 
 export class PlacesRepository extends DefaultCrudRepository<
   Places,
-  typeof Places.prototype.id
+  typeof Places.prototype._id
 > {
   constructor(
     @inject('datasources.finalproject') dataSource: FinalprojectDataSource,
