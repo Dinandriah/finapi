@@ -106,7 +106,7 @@ export class PlaceController {
     @param.path.string('_id') _id: string,
     @requestBody() places: Places,
   ): Promise<void> {
-    await this.placesRepository.updateById(_id, places);
+    return await this.placesRepository.updateById(_id, places);
   }
 
   @del('/places/{_id}', {
