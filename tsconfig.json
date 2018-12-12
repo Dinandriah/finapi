@@ -4,8 +4,12 @@
   "include": [
     "src",
     "test",
-    "index.ts"
+    "index.ts",
   ],
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "moduleResolution": "node"
+},
   "exclude": [
     "node_modules/**",
     "packages/*/node_modules/**",

@@ -2,7 +2,7 @@
   "name": "finalproject",
   "connector": "mongodb",
   "url": "mongodb://dinandriah:4730south@ds039684.mlab.com:39684/finalproject",
-  "host": "mlab.com",
+  "host": "ds039684.mlab.com",
   "port": 39684,
   "user": "dinandriah",
   "password": "4730south",
